@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <ul>
+            <% vragen.forEach(function(devraag,index){ %>
+                <li> <%= devraag %> </li>
+            <% }) %>
+        </ul>
+        <!-- <ul>
+            <% antwoorden.forEach(function(antwoord,index){ %>
+                <li> <%= antwoord %> </li>
+            <% }) %>
+        </ul> -->
+<ul>
+       <% dataset.forEach(function(antwoord, index){ %>
+            <li>> <%= Object.values(dataset[index]) %> </li>
+      <%  }) %>
+
+       </ul>
+    </body>
+</html>
