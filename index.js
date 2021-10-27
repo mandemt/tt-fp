@@ -1,16 +1,21 @@
 let dataset = require('./tt-dataset.json')
 
-dataset.forEach ((x, index) => {
-    var oud = dataset[index]['Wat is je oogkleur?']
-    // console.log(oud)
-    if(oud === 'blauw'){
-        console.log('iets')
+var hallo = Object.keys(dataset[1])
+// console.log(hallo)
+
+dataset.forEach((element, index) => {
+    var vragen = Object.keys(dataset[index]) // Script gaat over alle vraagelementen uit het JSON bestand.
+console.log(vragen)
+    if (vragen[index] == 'Wat is je oogkleur?'){
+        var oogkleurvraag = vragen[index]
+        console.log(oogkleurvraag)
+    //    console.log('ja') // Als de vraag tegenkomt , wordt ja gezegd.
     }
     else{
-        console.log('niks')
+        var wrongQuestion = vragen[index]
+        // console.log(wrongQuestion) // Als hij hem niet tegenkomt, wordt de vraag gezegd
     }
-}
-)
+})
 const cleanVariables = { b: 4, c: 5 };
 
 
