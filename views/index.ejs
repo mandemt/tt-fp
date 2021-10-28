@@ -5,16 +5,16 @@
                 <li> <%= devraag %> </li>
             <% }) %>
         </ul>
-        <!-- <ul>
-            <% antwoorden.forEach(function(antwoord,index){ %>
-                <li> <%= antwoord %> </li>
-            <% }) %>
-        </ul> -->
-<ul>
-       <% dataset.forEach(function(antwoord, index){ %>
-            <li>> <%= Object.values(dataset[index]) %> </li>
-      <%  }) %>
+ 
+        <ol>
+         <%   dataset.forEach((element, index) => { %>
+               <%  var vragen = Object.keys(dataset[index]) %> 
+              <%  })  %>
+              <%   if (vragen[index] == 'Wat is je oogkleur?'){ %>
+<%                } %>
+            <li> <%= oogkleurvraag %> </li>
+            }) %>
 
-       </ul>
+       </ol>
     </body>
 </html>
