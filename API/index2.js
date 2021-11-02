@@ -9,6 +9,7 @@ function veranderWaarde() {
 function maakReq(id) {
   
 
+    const apikey = 'N7PX59OF'
 
 var request = new XMLHttpRequest(); // de aanvraag naar de data van de API wordt aangevraagd
 request.open('GET', 'https://www.rijksmuseum.nl/api/nl/collection/' + id + '?key=' + apikey )
