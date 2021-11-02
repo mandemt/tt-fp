@@ -1,0 +1,11 @@
+body{
+}
+ul{
+    display:flex;
+    flex-direction:row;
+}
+div{
+    height:5em;
+    width:5em;
+    background-color: orange;
+}
