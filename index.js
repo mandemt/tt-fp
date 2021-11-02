@@ -1,3 +1,4 @@
+
 function doeWat() {
 fetch('http://localhost:8888/tt-dataset.json') // laadt het JSON bestand in
 .then(data => data.json())
@@ -6,20 +7,30 @@ fetch('http://localhost:8888/tt-dataset.json') // laadt het JSON bestand in
 		woord = removeSpaces(data[vulin.value]);
 		variabele = removeCapitals(woord);
 		volledig = changeStringToNumber(variabele);
-		let lijst = document.createElement("li")
-		lijst.textContent = volledig
-		document.body.appendChild(lijst)
+	
+console.log(volledig)
+
+		// if(volledig === 'blauw'){
+		// 	blauw.push(volledig)
+		// }
+		// if(volledig === 'bruin'){
+		// 	bruin.push(volledig)
+		// }
+		// else{
+		// 	anders.push(volledig)
+		// }
+	})
 
 		
 	})
-})
+
 }
 
+
 // vulin.addEventListener('change',roepNaam )
-let vulin = document.querySelector("input[type='text']")
-let stuur = document.querySelector("input[type='submit']")
-let tekst = document.querySelector("ul  ")
-stuur.addEventListener('click', doeWat)
+stuur.onclick = doeWat
+
+
 	function removeSpaces(string) {	
 		if(typeof string === 'string'){
 			return string.replace(/ |[.]|/gi, '');
