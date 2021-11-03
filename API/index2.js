@@ -1,4 +1,4 @@
-const dinges = document.querySelector('input[type="text"]')
+const dinges = document.querySelector('input[type="checkbox"]')
 dinges.addEventListener('input', veranderWaarde)
 
 function veranderWaarde() {
@@ -9,7 +9,7 @@ function veranderWaarde() {
 function maakReq(id) {
   
 
-    const apikey = 'N7PX59OF'
+    const apikey = secret
 
 var request = new XMLHttpRequest(); // de aanvraag naar de data van de API wordt aangevraagd
 request.open('GET', 'https://www.rijksmuseum.nl/api/nl/collection/' + id + '?key=' + apikey )
@@ -18,8 +18,10 @@ request.onload = function() {
 
 let data = JSON.parse(request.response)
 let kleuren = data.artObject.colors
+console.log(kleuren)
+let url = data.artObject.webImage.url
 let titel = data.artObject.title
-console.log(titel)
+console.log(titel + ' ' + url)
 
 
 if (request.status >= 200 && request.status < 400) {

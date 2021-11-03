@@ -1,37 +1,62 @@
-cleanData()
-function cleanData() {
+const dinges = document.querySelector('input[type="text"]')
+const sturen = document.querySelector('input[type="submit"]')
+sturen.addEventListener('click', veranderWaarde)
+
+			
+	function veranderWaarde() {
+			   let key = dinges.value
+			   cleanData(key)
+			}
+			
+function cleanData(key) {
 	fetch('http://localhost:8888/tt-dataset.json') // laadt het JSON bestand in
 		.then(data => data.json())
-		.then(data => {
+		.then(data => {	
+			let oud = []
+			let array = []
+			data.map(data => {
+			
+				sturen.addEventListener('submit', veranderWaarde)
+				oud.push(data[key])
 
-			return data.map(data => {
-				let key = "Wat is je favoriete datum, maar nu in tekst!"
 				onbewerkt = verwijderSpaties(data[key]); // Onbewerkte antwoorden worden toegankelijkere waarden zonder spaties
 				waarde = verwijderHoofdletters(onbewerkt); // waarden worden zonder hoofdletter voor meer consistentie
 				volledig = voorkomDubbeleWaarden(waarde); // De verdiepingen worden vervangen door een getal. Ook wordt het type data Number.
 				ultimate = stringNaarNummer(volledig);
-				console.log(ultimate)
-			})
-		})
+				array.push(ultimate)
+
+							})
+
+								function sorteren(waarde1, waarde2) { // sort() werkt op alfabetische volgorde, dus 1  == 10 waardoor deze bij elkaar komen te staan
+								if (waarde1 < waarde2){ // Nu zal de array data gezien worden als een getal en dus wel in volgorde worden gezet
+								return -1; 
+								}
+							  }
+							
+
+		console.table(oud)
+		
+		console.table(array.sort(sorteren))
+	
+	})
+		
+		
 }
 
 function verwijderSpaties(string) {
-if( key = "Wat is je favoriete datum, maar nu in tekst!"){
+	 if(typeof string === 'string'){
+	return string.replace(/ |[^a-z,0-9]|/gi, ''); // woorden vallen achter elkaar doordat leestekens vervangen worden door -niets-
+}
+
+else{
 	return string
 }
- else   { 
-		return string.replace(/ |[.]|/gi, ''); // woorden vallen achter elkaar doordat leestekens vervangen worden door -niets-
-	}
-	
-	
 }
 
 function verwijderHoofdletters(string) {
 	if (typeof string === 'string') {
-
 		return string.toLowerCase();
 	}
-
 	else {
 		return string;
 	}
@@ -39,13 +64,31 @@ function verwijderHoofdletters(string) {
 }
 
 
+function voorkomDubbeleWaarden(string) {
+	if(typeof string === 'string'){
+	if (string.indexOf('frontend') > -1 | string.indexOf('front-end') > -1) {
+		return string.replace(string, 'frontender');
+	}
+	if (string.indexOf('design') > -1) {
+		return string.replace(string, 'designer')
+	}
+	if(string === 'kerst'){
 
-
+		let today = new Date();
+		return string.replace(string, '25 december')
+	}
+	else{
+		return string
+	}
+}	
+else {
+	return string
+}
+}
 
 
 function stringNaarNummer(string) {
-
-	if (string === 'geen' | string === 'thuis' | string === 'niet' | string === "" | string === "geenidee" ) { // lege waarden wordt null
+	if (string === 'geen' | string === 'thuis' | string === 'niet' | string === "" | string === "geenidee" | string === "ikbenlactoseintolerant,gaweg") { // lege waarden wordt null
 		return 'geen data'
 	}
 	if (string === 'eerste') { // oplossen synoniemen en variaties voor 1
@@ -66,23 +109,4 @@ function stringNaarNummer(string) {
 
 
 
-}
-
-
-
-function voorkomDubbeleWaarden(string) {
-	if(typeof string === 'string'){
-	if (string.indexOf('frontend') > -1 | string.indexOf('front-end') > -1) {
-		return string.replace(string, 'frontender');
-	}
-	if (string.indexOf('design') > -1) {
-		return string.replace(string, 'designer')
-	}
-	if(key === "Wat is je favoriete datum, maar nu in tekst!") {
-		return string
-	}
-	else {
-		return string.replace(/[^a-z,0-9]|  /gi, '');
-	}
-}	
 }
