@@ -53,8 +53,12 @@ Ook hier kun je een schilder invullen en krijg je de opgeschoonde data terug in 
 
 Voor meer informatie
 
-* documentatie:
+* documentatie & bronnen:
+* Tech Track uitleg en opdracht: https://github.com/cmda-tt
 * RijksData API documentatie: https://data.rijksmuseum.nl/object-metadata/api/
+* Hogeschool van amsterdam
+
+mandemt
 
 
 
