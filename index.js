@@ -1,4 +1,4 @@
-import  dataOpschonen from '/modules/dataopschonen.js' // De functie om alle data op te schonen  mbv onderstaande functies
+import dataOpschonen from '/modules/dataopschonen.js' // De functie om alle data op te schonen  mbv onderstaande functies
 
 const textInput = document.querySelector('input[type="text"]'); // invoerveld
 const submitInput = document.querySelector('input[type="submit"]'); // verstuur knop
