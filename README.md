@@ -1,4 +1,4 @@
-# Opschonen van lokale en API data
+## Opschonen van lokale en API data met mandemtable-cleaner
 <img src="https://github.com/mandemt/tt-fp/blob/main/images/readme-img1.png"> </img>
 
 ### Introductie
