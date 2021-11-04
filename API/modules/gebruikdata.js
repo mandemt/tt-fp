@@ -1,12 +1,12 @@
 import { API_KEY } from '/API/apikey.js' // De verborgen api key is vanuit een in git verborgen bestand gehaald.
 export default function maakRequest(id) { //  maakRequest wordt als module geexporteerd.
     const apikey = API_KEY // Verborgen key
-    var request = new XMLHttpRequest(); // de aanvraag naar de data van de API wordt aangevraagd 
+    let request = new XMLHttpRequest(); // de aanvraag naar de data van de API wordt aangevraagd 
     request.open('GET', 'https://www.rijksmuseum.nl/api/nl/collection/?key=' + apikey + '&involvedMaker=' + id) // De link naar de API. Een verschillend id zorgt voor andere resultaten.
     request.onload = function () { // Als het request wordt uitgevoerd zal deze anonieme functie worden uitgevoerd.
         let ruweData = []; // Array voor de onbewerkte data
         let schoneData = []; // Array voor opsgeschoonde data
-        let data = JSON.parse(request.response); // Data uit de API wordt omgezet als JSON data
+        let data = JSON.parse(request.response); // string uit de API wordt omgezet als JS object
         let kunstwerken = data.artObjects; // Ik haal de specifieke variabele uit de kunstenaar uit id.
 
         kunstwerken.forEach(kunstwerk => { // Er wordt over alle (10) kunstwerken heengegaan
@@ -30,5 +30,7 @@ export default function maakRequest(id) { //  maakRequest wordt als module geexp
         console.table(ruweData); // in de console komt nu een overzicht van de oude data en nieuwe data.
         console.table(schoneData);
     }
+console.log('hallo')
+
     request.send(); // De aanvraag wordt verstuurd.
 }
