@@ -25,7 +25,7 @@ Er zijn twee webpagina' s waarop je de tool kunst testen. De resultaten van het 
 Lees ook de documentatie in mijn wiki als je wilt weten welke functies waarvoor zijn!
 
 * Lokale data opschonen: De index van je lokale server. 
-
+> <img src="https://github.com/mandemt/tt-fp/blob/main/images/webpage.png" width="50%"></img>
 De betreffende database genaamd `tt-dataset.json` is meegekloond met de rest van de repository. Je kunt je eigen toevoegen door in `dataopschonen.js` in de fetch link de naam te veranderen naar de naam van jouw dataset, of simpelweg de content in `tt-dataset.json` te vervangen door jouw data.
 
 Test een vraag in het invoerveld en kijk in de console welke waarden je terugkrijgt. Je hoort de ruwe data eerst te krijgen, daarna de opgeschoonde data.
@@ -33,6 +33,7 @@ Test een vraag in het invoerveld en kijk in de console welke waarden je terugkri
  
 
 * API data opschonen: `localhost:port/API/index2.js`
+> <img src="https://github.com/mandemt/tt-fp/blob/main/images/webpage2.png" width="20%" ></img>
 
 Met deze methode haal je een dataset van het internet af. Zorg dus dat je een internetverbinding hebt.
 
@@ -45,6 +46,8 @@ Vervolgens maak je een nieuw bestand aan, genaamd `apikey.js` dit is een verborg
 export let API_KEY = 'jouw key' 
 
 ```
+
+
 
 De key wordt dan automatisch opgehaald door het `dataopschonen.js` bestand en krijgt dan officieel toegang to de API.
 
