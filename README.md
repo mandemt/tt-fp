@@ -57,6 +57,8 @@ Ook hier kun je een schilder invullen en krijg je de opgeschoonde data terug in 
 Voor meer informatie
 
 * documentatie & bronnen:
+* https://github.com/mandemt/tt-fp/wiki/Lokale-data
+* https://github.com/mandemt/tt-fp/wiki/API-data
 * Tech Track uitleg en opdracht: https://github.com/cmda-tt
 * RijksData API documentatie: https://data.rijksmuseum.nl/object-metadata/api/
 * Hogeschool van amsterdam
