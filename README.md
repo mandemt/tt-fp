@@ -54,7 +54,7 @@ De key wordt dan automatisch opgehaald door het `dataopschonen.js` bestand en kr
 Ook hier kun je een schilder invullen en krijg je de opgeschoonde data terug in de console.
 
 
-Voor meer informatie
+## Voor meer informatie
 
 * documentatie & bronnen:
 * https://github.com/mandemt/tt-fp/wiki/Lokale-data
